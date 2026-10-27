@@ -1,0 +1,31 @@
+name: Cloud Portfolio CI
+
+on:
+push:
+branches:
+- main
+pull_request:
+branches:
+- main
+
+jobs:
+validate:
+name: Validate Portfolio Files
+runs-on: ubuntu-latest
+
+```
+steps:
+  - name: Checkout Repository
+    uses: actions/checkout@v4
+
+  - name: Verify Website File
+    run: test -f website/index.html
+
+  - name: Verify Terraform Files
+    run: |
+      test -f main.tf
+      test -f providers.tf
+      test -f variables.tf
+      test -f outputs.tf
+      test -f versions.tf
+```

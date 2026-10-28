@@ -1,6 +1,6 @@
 name: Cloud Portfolio CI
 
-on:
+'on':
 push:
 branches:
 - main
@@ -28,4 +28,3 @@ steps:
       test -f variables.tf
       test -f outputs.tf
       test -f versions.tf
-```
